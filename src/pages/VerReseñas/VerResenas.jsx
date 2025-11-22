@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -23,7 +22,9 @@ const VerResenas = () => {
 
     if (reseñaActualizada) {
       setResenas((prev) =>
-        prev.map((r) => (r._id === reseñaActualizada._id ? reseñaActualizada : r))
+        prev.map((r) =>
+          r._id === reseñaActualizada._id ? reseñaActualizada : r
+        )
       );
 
       toast.success("✔ Reseña actualizada");
@@ -58,9 +59,7 @@ const VerResenas = () => {
       );
 
       // Eliminar de la lista sin recargar
-      setResenas((prev) =>
-        prev.filter((r) => r._id !== resenaSeleccionada)
-      );
+      setResenas((prev) => prev.filter((r) => r._id !== resenaSeleccionada));
 
       toast.success("✔ Reseña eliminada");
     } catch (err) {
@@ -79,7 +78,25 @@ const VerResenas = () => {
 
   return (
     <div className="min-h-screen bg-[#0A0A12] text-white pt-28 pb-24 px-6">
+      <div className="flex gap-3 w-full md:w-auto justify-center md:justify-end">
+        <button
+          onClick={() => setVista("comentar")}
+          className={`px-4 md:px-5 py-2 rounded-xl font-semibold transition-all ${
+            vista === "comentar"
+              ? "bg-[#6C63FF] shadow-[0_0_15px_#6C63FF90]"
+              : "bg-[#1A1A2E] hover:bg-[#26263A]"
+          }`}
+        >
+          Comentar
+        </button>
 
+        <Link
+          to="/ver-resenas"
+          className="px-4 md:px-5 py-2 rounded-xl font-semibold bg-[#1A1A2E] hover:bg-[#26263A] transition-all"
+        >
+          Ver reseñas
+        </Link>
+      </div>
       {/* GRID DE RESEÑAS */}
       <div className="grid max-w-7xl mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {resenas.map((r) => (
