@@ -4,7 +4,7 @@ import axios from "axios";
 import ResenaCard from "../../components/ReseñaCard/ReseñaCard";
 import ConfirmDeleteModal from "../../components/Modals/ModalConfirmacion/ModalConfirmacion";
 
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, Link } from "react-router-dom";
 import toast from "react-hot-toast";
 
 const VerResenas = () => {
@@ -12,6 +12,7 @@ const VerResenas = () => {
   const [loading, setLoading] = useState(true);
   const [resenaSeleccionada, setResenaSeleccionada] = useState(null);
   const [mostrarModal, setMostrarModal] = useState(false);
+  const [vista, setVista] = useState("comentar");
 
   const navigate = useNavigate();
   const location = useLocation();
