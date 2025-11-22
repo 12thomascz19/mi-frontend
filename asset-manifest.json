@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/mi-frontend/static/css/main.bbc2ccea.css",
+    "main.js": "/mi-frontend/static/js/main.30b1596b.js",
+    "index.html": "/mi-frontend/index.html",
+    "main.bbc2ccea.css.map": "/mi-frontend/static/css/main.bbc2ccea.css.map",
+    "main.30b1596b.js.map": "/mi-frontend/static/js/main.30b1596b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bbc2ccea.css",
+    "static/js/main.30b1596b.js"
+  ]
+}
